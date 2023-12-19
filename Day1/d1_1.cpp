@@ -1,11 +1,6 @@
-#include <iostream>
+#include <d1_common.h>
 
-bool is_digit(const char& c)
-{
-    return '0' <= c && c <= '9';
-}
-
-int get_calibration_value(const std::string& line)
+int get_calibration_value_1(const std::string& line)
 {
     int first = -1;
     int last = -1;
@@ -29,12 +24,6 @@ int get_calibration_value(const std::string& line)
 
 int main()
 {
-    std::string input_line;
-    int sum = 0;
-    while(std::getline(std::cin, input_line))
-    {
-        sum += get_calibration_value(input_line);
-    }
-    std::cout << sum << "\n";
+    std::cout << solve(get_calibration_value_1) << "\n";
     return 0;
 }

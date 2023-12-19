@@ -1,22 +1,25 @@
 DAY=$1
+PART=$2
 DIR="../Day$DAY"
-SOURCEFILE="$DIR/d${DAY}.cpp"
-EXECUTABLE="$DIR/d${DAY}.tsk"
+COMMON_SOURCEFILE="$DIR/d${DAY}_common.cpp"
+SOURCEFILE="$DIR/d${DAY}_${PART}.cpp"
+EXECUTABLE="$DIR/d${DAY}_${PART}.tsk"
+WORKING_DIR=$(pwd)/$DIR
 
-if [[  $2 == "-g" ]] || [[ $3 == "-g" ]] || [[ $4 == "-g" ]]
+if [[  $3 == "-g" ]] || [[ $4 == "-g" ]] || [[ $5 == "-g" ]]
 then
     DEBUG="-g"
 fi
 
-if [[ $3 == "-o" ]] || [[ $2 == "-o" ]]  || [[ $4 == "-o" ]]
+if [[ $4 == "-o" ]] || [[ $3 == "-o" ]]  || [[ $5 == "-o" ]]
 then
-    OUTFILE="$DIR/d${DAY}.out"
+    OUTFILE="$DIR/d${DAY}_${PART}.out"
 else
     OUTFILE=""
 fi
 
 
-if [[ $3 == "-i" ]] || [[ $2 == "-i" ]]  || [[ $4 == "-i" ]]
+if [[ $4 == "-i" ]] || [[ $3 == "-i" ]]  || [[ $5 == "-i" ]]
 then
     INFILE="$DIR/d${DAY}.in"
 else

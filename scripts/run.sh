@@ -19,13 +19,13 @@ COMPILATION_SUCCESS=0
 if [[ $DEBUG == "-g" ]]
 then
     echo "Compiling $SOURCEFILE with debug flags..."
-    if g++ $SOURCEFILE -o $EXECUTABLE -g
+    if g++ $COMMON_SOURCEFILE $SOURCEFILE -o $EXECUTABLE -g -I $WORKING_DIR
     then
         COMPILATION_SUCCESS=1
     fi
 else
     echo "Compiling $SOURCEFILE..."
-    if g++ $SOURCEFILE -o $EXECUTABLE
+    if g++ $COMMON_SOURCEFILE $SOURCEFILE -o $EXECUTABLE -I $WORKING_DIR
     then
         COMPILATION_SUCCESS=1
     fi
