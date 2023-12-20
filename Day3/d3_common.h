@@ -4,9 +4,9 @@
 #include <iostream>
 #include <vector>
 
-struct Schematic
+class Schematic
 {
-private:
+protected:
     int M, N;
     char** _;
 

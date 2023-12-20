@@ -4,7 +4,6 @@ int main()
 {
     int sum = 0;
     Schematic* input = read_input();
-    std::cout << input->M_size() << " " << input->N_size() << std::endl;
     for(int i=0; i < input->M_size(); ++i)
     {
         int linesum = 0;

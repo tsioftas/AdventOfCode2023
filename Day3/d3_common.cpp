@@ -19,9 +19,9 @@ Schematic::~Schematic()
 {
     for(int i=0; i < M; ++i)
     {
-        delete _[i];
+        delete[] _[i];
     }
-    delete _;
+    delete[] _;
 }
 
 Schematic* read_input()
